@@ -1,0 +1,22 @@
+clear all
+close all
+clc
+
+n = 32
+t = linspace(0,2*pi,n)
+f = sin(t)
+
+porder = 8
+coeff = polyfit(t,f,porder)
+f_rec = polyval(coeff,t)
+
+t_extended = linspace(2*pi,10,101)
+
+f_rec_ext = polyval(coeff,t_extended)
+
+
+
+plot(t,f,'-k')
+hold on
+plot(t,f_rec,'mo')
+plot(t_extended,f_rec_ext,'o')
