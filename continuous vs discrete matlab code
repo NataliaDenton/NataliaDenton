@@ -1,0 +1,20 @@
+n = 8
+x = linspace(0,2*pi,n)
+fx = sin(x)
+T = x(2)-x(1)
+f_sampling = 1/T
+
+
+syms f t
+f = sin(t)
+f_der = diff(f)
+dfx = cos(x)
+
+
+fplot(t,f,[0,2*pi],'-k')
+fplot(t,f_der,[0,2*pi],'-')
+hold on
+plot(x,fx,'-mo')
+plot(x,dfx,'-o')
+
+legend("continuous","discrete","continuous: derivitive","descrete: derivitive")
